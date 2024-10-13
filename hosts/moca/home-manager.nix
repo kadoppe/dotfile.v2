@@ -3,7 +3,7 @@
   imports = [
     # ../../home-manager/cli
     # ../../home-manager/gui
-    # ../../home-manager/desktop/hyprland
+    ../../home-manager/desktop/hyprland
     # ../../home-manager/desktop/xmonad
   ];
 
@@ -39,7 +39,7 @@
   # };
 
   home.packages = with pkgs; [
-    prismlauncher # alternative minecraft launcher
-    jdk
+    # prismlauncher # alternative minecraft launcher
+    # jdk
   ];
 }
