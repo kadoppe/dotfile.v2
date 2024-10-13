@@ -14,10 +14,26 @@ let
       };
     };
 
+  mkDarwinSystem = 
+    {
+      system,
+      hostname,
+      username, 
+      modules,
+    }:
+    inputs.nix-darwin.lib.darwinSystem {
+      inherit system modules;
+      specialArgs = { 
+        # inherit (nixpkgs) lib; 
+        inherit inputs hostname username; 
+      };
+    };
+
   mkHomeManagerConfiguration =
     {
       system,
       username,
+      homeDirectory,
       overlays,
       modules,
     }:
@@ -44,8 +60,7 @@ let
       modules = modules ++ [
         {
           home = {
-            inherit username;
-            homeDirectory = "/home/${username}";
+            inherit username homeDirectory;
             stateVersion = "22.11";
           };
           programs.home-manager.enable = true;
@@ -64,12 +79,29 @@ in
     };
   };
 
+  darwin = {
+    thunder = mkDarwinSystem {
+      system = "aarch64-darwin";
+      hostname = "thunder";
+      username = "kadowaki";
+      modules = [ ./thunder/nixos.nix ];
+    };
+  };
+
   home-manager = {
     "kadoppe@moca" = mkHomeManagerConfiguration {
       system = "aarch64-linux";
       username = "kadoppe";
-      overlays = [ ];
+      homeDirectory = "/home/kadoppe";
+      overlays = [];
       modules = [ ./moca/home-manager.nix ];
+    };
+    "kadowaki@thunder" = mkHomeManagerConfiguration {
+      system = "aarch64-darwin";
+      username = "kadowaki";
+      homeDirectory = "/Users/kadowaki";
+      overlays = [];
+      modules = [ ./thunder/home-manager.nix ];
     };
   };
 }

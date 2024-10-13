@@ -12,7 +12,7 @@
        ../../modules/core
       # ../../modules/desktop
       # ../../modules/programs/flatpak.nix
-      # ../../modules/programs/hyprland.nix
+      ../../modules/programs/hyprland.nix
       # ../../modules/programs/media.nix
       # ../../modules/programs/nix-ld.nix
       # ../../modules/programs/secureboot.nix
