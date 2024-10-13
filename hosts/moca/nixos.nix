@@ -9,7 +9,7 @@
     [
       ./hardware-configuration.nix
 
-      ../../modules/core
+       ../../modules/core
       # ../../modules/desktop
       # ../../modules/programs/flatpak.nix
       # ../../modules/programs/hyprland.nix
@@ -30,7 +30,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_stable.prl-tools;
+    kernelPackages = pkgs.linuxPackages_xanmod_stable;
   };
 
   # Don't touch this
