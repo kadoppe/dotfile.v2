@@ -18,10 +18,12 @@ let
     {
       system,
       username,
+      overlays,
       modules,
     }:
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import inputs.nixpkgs {
+        inherit system overlays;
         config = {
           allowUnfree = true;
 
@@ -33,6 +35,7 @@ let
         inherit inputs username;
         theme = (import ../themes) "tokyonight-moon";
         pkgs-stable = import inputs.nixpkgs-stable {
+          inherit system overlays;
           config = {
             allowUnfree = true;
           };
@@ -65,6 +68,7 @@ in
     "kadoppe@moca" = mkHomeManagerConfiguration {
       system = "aarch64-linux";
       username = "kadoppe";
+      overlays = [ ];
       modules = [ ./moca/home-manager.nix ];
     };
   };
