@@ -7,7 +7,7 @@
 {
   imports =
     [
-      # ./hardware-configuration.nix
+      ./hardware-configuration.nix
 
       # ../../modules/core
       # ../../modules/desktop
