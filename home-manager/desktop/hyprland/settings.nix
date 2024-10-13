@@ -1,7 +1,4 @@
-{ lib, theme, ... }:
-let
-  colors = theme.colors;
-in
+{ lib, ... }:
 {
   wayland.windowManager.hyprland.settings = {
     env = [
@@ -23,8 +20,6 @@ in
       gaps_in = 5;
       gaps_out = 5;
       border_size = 2;
-      "col.inactive_border" = "rgb(${colors.bg})";
-      "col.active_border" = "rgb(${colors.blue})";
       resize_on_border = true;
     };
     decoration = {
