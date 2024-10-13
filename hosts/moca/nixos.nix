@@ -30,7 +30,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linux_xanmod_stable.prl-tools;
+    kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_stable.prl-tools;
   };
 
   # Don't touch this
