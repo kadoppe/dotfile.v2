@@ -16,7 +16,7 @@
       # ../../modules/programs/media.nix
       # ../../modules/programs/nix-ld.nix
       # ../../modules/programs/secureboot.nix
-      # ../../modules/programs/shell.nix
+      ../../modules/programs/shell.nix
       # ../../modules/programs/steam.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
