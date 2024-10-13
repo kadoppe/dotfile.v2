@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    # ../../home-manager/cli
+    ../../home-manager/cli
     # ../../home-manager/gui
     ../../home-manager/desktop/hyprland
     # ../../home-manager/desktop/xmonad

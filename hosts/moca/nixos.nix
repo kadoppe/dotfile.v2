@@ -9,7 +9,7 @@
     [
       ./hardware-configuration.nix
 
-      # ../../modules/core
+      ../../modules/core
       # ../../modules/desktop
       # ../../modules/programs/flatpak.nix
       # ../../modules/programs/hyprland.nix
