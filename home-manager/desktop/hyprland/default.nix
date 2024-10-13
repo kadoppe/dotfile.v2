@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    # ./settings.nix
+    ./settings.nix
     # ./key-binds.nix
     # ./wofi.nix
     # ./dunst.nix
