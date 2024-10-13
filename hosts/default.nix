@@ -68,7 +68,6 @@ in
     "kadoppe@moca" = mkHomeManagerConfiguration {
       system = "aarch64-linux";
       username = "kadoppe";
-      overlays = [ inputs.fenix.overlays.default ];
       modules = [ ./moca/home-manager.nix ];
     };
   };
