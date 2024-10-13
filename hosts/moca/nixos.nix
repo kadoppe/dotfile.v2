@@ -19,11 +19,11 @@
       # ../../modules/programs/shell.nix
       # ../../modules/programs/steam.nix
     ]
-    # ++ (with inputs.nixos-hardware.nixosModules; [
-    #   common-cpu-amd
-    #   common-gpu-amd
-    #   common-pc-ssd
-    # ]);
+    ++ (with inputs.nixos-hardware.nixosModules; [
+      # common-cpu-amd
+      # common-gpu-amd
+      # common-pc-ssd
+    ]);
 
   boot = {
     loader = {
