@@ -56,7 +56,7 @@ let
 in
 {
   nixos = {
-    terra = mkNixosSystem {
+    moca = mkNixosSystem {
       system = "aarch64-linux";
       hostname = "moca";
       username = "kadoppe";
