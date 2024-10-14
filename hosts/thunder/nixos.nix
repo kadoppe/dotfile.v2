@@ -7,14 +7,14 @@
 {
   imports =
     [
-       ../../modules/core
+       # ../../modules/core
       # ../../modules/desktop
       # ../../modules/programs/flatpak.nix
       # ../../modules/programs/hyprland.nix
       # ../../modules/programs/media.nix
       # ../../modules/programs/nix-ld.nix
       # ../../modules/programs/secureboot.nix
-      ../../modules/programs/shell.nix
+      # ../../modules/programs/shell.nix
       # ../../modules/programs/steam.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
@@ -36,6 +36,15 @@
 
   services.nix-daemon.enable = true;
 
+  environment = {
+    shells = [ pkgs.fish ];
+    systemPackages = with pkgs; [
+      git
+      m-cli
+      mas
+      nix-output-monitor
+    ];
+  };
 
   # users.users."${username}" = {
   #   isNormalUser = true;
