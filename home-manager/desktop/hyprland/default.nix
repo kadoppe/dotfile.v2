@@ -29,7 +29,7 @@ in
       # wl-clipboard # clipboard manager
     ])
     ++ [
-      # inputs.hyprsome.packages.${pkgs.system}.default # workspace manager
+      inputs.hyprsome.packages.${pkgs.system}.default # workspace manager
       # hypr-helper # my hyprland helper tool
     ];
 
