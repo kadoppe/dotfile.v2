@@ -6,6 +6,6 @@
     # ./git.nix
     # ./neovim.nix
     ./nix.nix
-    # ./tools.nix
+    ./tools.nix
   ];
 }
